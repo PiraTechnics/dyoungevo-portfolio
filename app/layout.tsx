@@ -18,11 +18,11 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
-const geistPixel = Geist_Pixel({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist-pixel",
-});
+// const geistPixel = Geist_Pixel({
+//   subsets: ["latin"],
+//   display: "swap",
+//   variable: "--font-geist-pixel",
+// });
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],

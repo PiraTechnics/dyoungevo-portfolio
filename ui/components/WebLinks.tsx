@@ -1,6 +1,7 @@
 import { ExternalWebsites } from "@/data";
+import Icon from "./Icon";
 
-export const LinkIcons = () => {
+export const WebLinks = () => {
   return (
     <div className="flex flex-wrap justify-center gap-6 mx-2">
       {ExternalWebsites.map((entry, i) => (
@@ -11,9 +12,11 @@ export const LinkIcons = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <entry.icon
-              size={40}
-              classes="fill-slate-300 opacity-50 transition ease-in-out duration-300 hover:scale-125"
+            <Icon
+              title={entry.name}
+              iconD={entry.iconD}
+              size={35}
+              classes="fill-slate-300 opacity-100 transition ease-in-out duration-300 hover:scale-125"
             />
           </a>
         </div>

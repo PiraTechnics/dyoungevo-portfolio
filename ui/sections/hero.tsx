@@ -1,6 +1,6 @@
 import Image from "next/image";
 import profile from "@/public/profile.jpg";
-import { LinkIcons } from "../components/LinkIcons";
+import { WebLinks } from "../components/WebLinks";
 
 export const Hero = () => {
   return (
@@ -22,7 +22,9 @@ export const Hero = () => {
           Voice Actor
         </p>
       </div>
-      <LinkIcons />
+      <div className="mt-12">
+        <WebLinks />
+      </div>
     </div>
   );
 };
