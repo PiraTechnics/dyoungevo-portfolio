@@ -1,15 +1,15 @@
 import Image from "next/image";
-import profile from "@/public/profile.jpg";
-import { WebLinks } from "../components/WebLinks";
+import profile from "@/public/side-profile-4.jpg";
+import { WebLinks } from "@/ui/components/WebLinks";
 
 export const Hero = () => {
   return (
     // <div className="bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
-    <div className="flex flex-col items-center justify-center gap-4 px-6 py-24 sm:py-32 lg:px-8 bg-linear-to-bl from-indigo-900 via-indigo-950 to-violet-900">
+    <div className="flex flex-col items-center justify-center gap-4 px-6 py-24 sm:py-32 lg:px-8">
       <Image
         src={profile}
         alt="Headshot photo of Voice Actor Devin Younge"
-        className="rounded-full sm:w-[225]"
+        className="rounded-4xl sm:w-[225]"
         width={175}
         height={175}
         priority
