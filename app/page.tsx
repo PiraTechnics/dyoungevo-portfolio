@@ -1,9 +1,15 @@
 // import Image from "next/image";
 
 import { Hero } from "@/ui/sections/hero";
+import { Samples } from "@/ui/sections/samples";
 
 export default function Home() {
-  return <Hero />;
+  return (
+    <div>
+      <Hero />
+      <Samples />
+    </div>
+  );
 }
 
 // export default function Home() {

@@ -32,3 +32,10 @@ export const Email = {
   name: "Email",
   href: "mailto:dyoungevo@gmail.com",
 };
+
+export const AudioSamples = [
+  {
+    src: "/assets/sample.mp3",
+    name: "Tae Kwon Donkey",
+  },
+];
