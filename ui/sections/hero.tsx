@@ -5,7 +5,7 @@ import { WebLinks } from "@/ui/components/WebLinks";
 export const Hero = () => {
   return (
     // <div className="bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
-    <div className="flex flex-col items-center justify-center gap-4 px-6 py-24 sm:py-32 lg:px-8">
+    <div className="flex flex-col items-center justify-center gap-4 px-6 pt-24 sm:pt-32 lg:px-8">
       <Image
         src={profile}
         alt="Headshot photo of Voice Actor Devin Younge"
@@ -18,7 +18,7 @@ export const Hero = () => {
         <h2 className="text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
           Devin Younge
         </h2>
-        <p className="mt-4 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 dark:text-gray-400">
+        <p className="mt-4 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8 dark:text-gray-300">
           Voice Actor
         </p>
       </div>

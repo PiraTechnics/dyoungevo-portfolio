@@ -5,7 +5,7 @@ import { Samples } from "@/ui/sections/samples";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col gap-16">
       <Hero />
       <Samples />
     </div>

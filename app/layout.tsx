@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${playfairDisplay.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-gray-900 bg-linear-to-b from-indigo-950 via-indigo-900 to-blue-900">
+      <body className="min-h-full bg-gray-900 bg-linear-to-b from-indigo-950 via-indigo-900 to-blue-900 bg-fixed pb-24">
         {children}
       </body>
     </html>

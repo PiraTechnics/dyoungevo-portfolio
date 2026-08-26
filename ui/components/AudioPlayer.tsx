@@ -85,64 +85,40 @@ export const AudioPlayer = ({ src = "", title = "" }) => {
   );
 
   return (
-    <div className="relative">
-      {/* <img
-        className={`w-20 h-20 transition-all duration-700 -z-10  left-5 absolute ${
-          isPlaying ? "motion-safe:animate-spin -top-10" : "top-10"
-        }`}
-        src="https://cdn.pixabay.com/photo/2012/04/13/13/23/disc-32390_640.png"
-        alt="Record Player Disk"
-      /> */}
-      <div className="p-4 my-7 z-1 bg-white dark:bg-gray-800 rounded-xl dark:shadow-lg">
-        <audio
-          ref={audioRef}
-          onTimeUpdate={handleTimeUpdate}
-          onLoadedMetadata={handleLoadedMetadata}
-          onEnded={handleAudioEnded}
-          src={src}
-        />
-        <div className="flex items-center justify-between">
-          <h3 className="text-md text-gray-500 dark:text-gray-300 flex">
-            {title}
-          </h3>
-          <button
-            onClick={togglePlayPause}
-            className="transition-all duration-300 shadow-sm text-teal-500 font-bold rounded-full flex items-center justify-center"
-          >
-            {hasEnded ? <PlayIcon /> : isPlaying ? <PauseIcon /> : <PlayIcon />}
-          </button>
-        </div>
-
-        <div
-          className="relative h-2 bg-gray-600 rounded mb-4 mt-4 cursor-pointer"
-          onClick={handleTimelineClick}
+    <div className="p-4 mt-4 bg-white dark:bg-gray-800 rounded-xl dark:shadow-lg md:w-1/3 sm:w-1/2 xs:w-2/3 w-3/4">
+      <audio
+        ref={audioRef}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+        onEnded={handleAudioEnded}
+        src={src}
+      />
+      <div className="flex items-center justify-between">
+        <h3 className="text-md text-gray-500 dark:text-gray-300 flex">
+          {title}
+        </h3>
+        <button
+          onClick={togglePlayPause}
+          className="transition-all duration-300 shadow-sm text-indigo-500 font-bold rounded-full flex items-center justify-center"
         >
-          <div
-            className="absolute top-0 left-0 h-full bg-teal-500 rounded"
-            style={{ width: `${(currentTime / duration) * 100}%` }}
-          ></div>
-        </div>
-
-        <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
-          <span>{formatTime(currentTime)}</span>
-          <span>{formatTime(duration - currentTime)}</span>
-        </div>
+          {hasEnded ? <PlayIcon /> : isPlaying ? <PauseIcon /> : <PlayIcon />}
+        </button>
       </div>
-      {/* <div className="text-gray-500 text-center">
-        Created by{" "}
-        <a href="https://sohrabzia.github.io/" className="text-gray-400">
-          Soharab zia
-        </a>
-      </div> */}
+
+      <div
+        className="relative h-2 bg-gray-600 rounded mb-4 mt-4 cursor-pointer"
+        onClick={handleTimelineClick}
+      >
+        <div
+          className="absolute top-0 left-0 h-full bg-indigo-500 rounded"
+          style={{ width: `${(currentTime / duration) * 100}%` }}
+        ></div>
+      </div>
+
+      <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
+        <span>{formatTime(currentTime)}</span>
+        <span>{formatTime(duration - currentTime)}</span>
+      </div>
     </div>
   );
 };
-
-// // Create root and render
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <AudioPlayer
-//     src="http://webaudioapi.com/samples/audio-tag/chrono.mp3"
-//     title="chrono.mp3"
-//   />,
-// );

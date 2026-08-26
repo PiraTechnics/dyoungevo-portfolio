@@ -3,11 +3,12 @@ import { AudioSamples } from "@/data";
 
 export const Samples = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
+      <h2 className="text-3xl font-semibold text-pretty tracking-tight text-gray-400 sm:text-4xl dark:text-gray-300">
+        Audio Samples
+      </h2>
       {AudioSamples.map((entry, i) => (
-        <div key={`sample-${i}`}>
-          <AudioPlayer src={entry.src} title={entry.name} />
-        </div>
+        <AudioPlayer key={`sample-${i}`} src={entry.src} title={entry.name} />
       ))}
       {/* <AudioPlayer src="/assets/sample.mp3" title="Tae Kwon Donkey" /> */}
     </div>
