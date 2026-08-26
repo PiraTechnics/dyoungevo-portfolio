@@ -10,7 +10,6 @@ export const Samples = () => {
       {AudioSamples.map((entry, i) => (
         <AudioPlayer key={`sample-${i}`} src={entry.src} title={entry.name} />
       ))}
-      {/* <AudioPlayer src="/assets/sample.mp3" title="Tae Kwon Donkey" /> */}
     </div>
   );
 };

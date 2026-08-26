@@ -2,12 +2,20 @@
 
 import { Hero } from "@/ui/sections/hero";
 import { Samples } from "@/ui/sections/samples";
+import { About } from "@/ui/sections/about";
+import { Studio } from "@/ui/sections/studio";
+import { Contact } from "@/ui/sections/contact";
+import { Resume } from "@/ui/sections/resume";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-16">
       <Hero />
       <Samples />
+      <About />
+      <Studio />
+      <Resume />
+      <Contact />
     </div>
   );
 }

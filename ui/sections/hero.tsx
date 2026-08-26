@@ -4,7 +4,6 @@ import { WebLinks } from "@/ui/components/WebLinks";
 
 export const Hero = () => {
   return (
-    // <div className="bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
     <div className="flex flex-col items-center justify-center gap-4 px-6 pt-24 sm:pt-32 lg:px-8">
       <Image
         src={profile}
