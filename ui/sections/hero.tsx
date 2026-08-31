@@ -4,11 +4,11 @@ import { WebLinks } from "@/ui/components/WebLinks";
 
 export const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 px-6 pt-24 sm:pt-32 lg:px-8">
+    <>
       <Image
         src={profile}
         alt="Headshot photo of Voice Actor Devin Younge"
-        className="rounded-4xl sm:w-[225]"
+        className="rounded-4xl sm:w-[225] self-center"
         width={175}
         height={175}
         priority
@@ -24,6 +24,6 @@ export const Hero = () => {
       <div className="mt-12">
         <WebLinks />
       </div>
-    </div>
+    </>
   );
 };

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Pixel, Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/ui/components/Header";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -42,7 +43,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${playfairDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-gray-900 bg-linear-to-b from-indigo-950 via-indigo-900 to-blue-900 bg-fixed pb-24">
-        {children}
+        <Header />
+        <div className="flex flex-col items-center justify-center gap-4 px-6 pt-24 sm:pt-32 lg:px-8">
+          {children}
+        </div>
       </body>
     </html>
   );
