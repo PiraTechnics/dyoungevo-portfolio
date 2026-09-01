@@ -39,3 +39,10 @@ export const AudioSamples = [
     name: "Tae Kwon Donkey",
   },
 ];
+
+export const pageLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Studio", href: "/studio" },
+  { name: "Contact", href: "/contact" },
+];
