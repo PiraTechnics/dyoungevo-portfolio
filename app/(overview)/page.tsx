@@ -9,7 +9,7 @@ import { WebLinks } from "@/ui/components/WebLinks";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-14">
+    <div className="flex flex-col gap-15">
       <Image
         src={profile}
         alt="Headshot photo of Voice Actor Devin Younge"

@@ -30,7 +30,7 @@ const studioItems = [
 
 export default function Studio() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-6">
       <h2 className=" font-semibold text-pretty tracking-tight text-white text-4xl lg:text-5xl">
         Home Studio
       </h2>

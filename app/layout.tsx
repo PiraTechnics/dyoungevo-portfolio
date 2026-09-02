@@ -44,9 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-ful bg-linear-to-b from-indigo-950 via-indigo-900 to-blue-900 bg-fixed pb-24">
         <Header />
-        <div className="flex flex-col items-center justify-center gap-4 px-6 pt-24 sm:pt-32 lg:px-8">
-          {children}
-        </div>
+        <div className="px-6 pt-8 sm:pt-16 lg:px-8">{children}</div>
       </body>
     </html>
   );
