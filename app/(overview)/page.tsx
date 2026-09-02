@@ -9,11 +9,11 @@ import { WebLinks } from "@/ui/components/WebLinks";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-14">
       <Image
         src={profile}
         alt="Headshot photo of Voice Actor Devin Younge"
-        className="rounded-4xl sm:w-[225] self-center"
+        className="rounded-4xl sm:w-[250] self-center"
         width={175}
         height={175}
         priority
@@ -22,7 +22,7 @@ export default function Home() {
         <h2 className="text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
           Devin Younge
         </h2>
-        <p className="mt-4 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8 dark:text-gray-300">
+        <p className="mt-4 text-lg font-medium text-pretty text-gray-400 sm:text-xl dark:text-gray-300">
           Voice Actor
         </p>
       </div>
