@@ -17,14 +17,14 @@ export const WebLinks = () => {
               title={entry.name}
               iconD={entry.iconD}
               size={35}
-              classes="fill-slate-300 opacity-100 transition ease-in-out duration-300 hover:scale-125"
+              classes="fill-white opacity-100 transition ease-in-out duration-300 hover:scale-125"
             />
           </a>
         </div>
       ))}
       <EmailIcon
         size={35}
-        classes="stroke-slate-300 opacity-100 transition ease-in-out duration-300 hover:scale-125"
+        classes="stroke-white opacity-100 transition ease-in-out duration-300 hover:scale-125"
       />
     </div>
   );

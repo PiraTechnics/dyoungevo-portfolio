@@ -22,11 +22,10 @@ export default function Home() {
         <h2 className="text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
           Devin Younge
         </h2>
-        <p className="mt-4 text-lg font-medium text-pretty text-gray-400 sm:text-xl dark:text-gray-300">
+        <p className="mt-4 text-lg font-medium sm:text-xl text-white">
           Los Angeles-based Voice Actor
         </p>
       </div>
-
       <WebLinks />
 
       {/* <Samples />
