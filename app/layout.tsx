@@ -42,7 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${playfairDisplay.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-gray-900 bg-linear-to-b from-indigo-950 via-indigo-900 to-blue-900 bg-fixed pb-24">
+      <body className="min-h-ful bg-linear-to-b from-indigo-950 via-indigo-900 to-blue-900 bg-fixed pb-24">
         <Header />
         <div className="flex flex-col items-center justify-center gap-4 px-6 pt-24 sm:pt-32 lg:px-8">
           {children}

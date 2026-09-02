@@ -73,18 +73,18 @@ export const MobileMenu = () => {
                   leaveTo="-translate-x-full"
                 >
                   <DialogPanel className="pointer-events-auto w-screen max-w-fit">
-                    <div className="flex h-full flex-col overflow-y-hidden bg-cws-secondary border-indigo-400 bg-indigo-600 opacity-80 border-2 rounded-r-md py-6 px-12 shadow-xl">
-                      <DialogTitle className="scale-125 mx-auto mb-4"></DialogTitle>
+                    <div className="flex h-full flex-col overflow-y-hidden border-white bg-linear-to-b to-indigo-950 via-indigo-900 from-blue-900 border-2 rounded-r-xl py-6 px-12 shadow-xl">
+                      <DialogTitle className=" mx-auto mb-4"></DialogTitle>
                       <ul className="relative flex flex-col text-center gap-8 mt-6 flex-1 px-4 sm:px-6">
                         {pageLinks.map((entry) => {
                           return (
                             <li
                               key={"mobile-" + entry.name}
-                              className="text-white italic font-semibold"
+                              className="text-white italic font-semibold hover:scale-110"
                             >
                               <button onClick={handleClick}>
                                 <Link
-                                  className={clsx("text-4xl", {
+                                  className={clsx(" text-3xl", {
                                     "text-white": pathname === entry.href,
                                   })}
                                   href={entry.href}

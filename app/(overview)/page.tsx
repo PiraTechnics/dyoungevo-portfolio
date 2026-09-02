@@ -23,7 +23,7 @@ export default function Home() {
           Devin Younge
         </h2>
         <p className="mt-4 text-lg font-medium text-pretty text-gray-400 sm:text-xl dark:text-gray-300">
-          Voice Actor
+          Los Angeles-based Voice Actor
         </p>
       </div>
 
