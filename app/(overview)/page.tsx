@@ -13,9 +13,9 @@ export default function Home() {
       <Image
         src={profile}
         alt="Headshot photo of Voice Actor Devin Younge"
-        className="rounded-4xl sm:w-[250] self-center"
-        width={175}
-        height={175}
+        className="rounded-4xl self-center"
+        width={250}
+        height={250}
         priority
       />
       <div className="mx-auto max-w-2xl text-center">
