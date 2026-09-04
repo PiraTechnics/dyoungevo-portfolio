@@ -6,6 +6,8 @@
 import Image from "next/image";
 import profile from "@/public/side-profile-4.jpg";
 import { WebLinks } from "@/ui/components/WebLinks";
+import { AudioPlayer } from "@/ui/components/AudioPlayer";
+import { Player } from "@/ui/components/Player";
 
 export default function Home() {
   return (
@@ -27,6 +29,10 @@ export default function Home() {
         </p>
       </div>
       <WebLinks />
+      {/* <Player
+        src="/assets/Devin_Younge_Sample_Reel.wav"
+        title="Character Sample"
+      /> */}
 
       {/* <Samples />
       <About />

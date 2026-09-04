@@ -8,11 +8,11 @@ const aboutParagraphs = [
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center gap-2">
+    <div className="flex flex-col items-center justify-center gap-4">
       <h2 className="text-3xl font-semibold text-pretty tracking-tight text-white sm:text-4xl lg:text-5xl">
         About
       </h2>
-      <div className="px-4 sm:max-w-5/6 md:max-w-3/4 xl:max-w-2/3 py-4 text-white text-left italic md:text-lg lg:text-xl flex flex-col gap-4 mb-8">
+      <div className="px-4 sm:max-w-5/6 md:max-w-3/4 xl:max-w-2/3 py-4 text-white text-left italic md:text-lg lg:text-xl flex flex-col gap-4 mb-8 border-2 rounded-2xl border-indigo-400">
         {aboutParagraphs.map((paragraph) => (
           <p key={aboutParagraphs.indexOf(paragraph)}>{paragraph}</p>
         ))}
