@@ -1,29 +1,7 @@
 import type { Metadata } from "next";
-import { Geist_Pixel, Geist, Playfair_Display } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/ui/components/Header";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist",
-});
-
-// const geistPixel = Geist_Pixel({
-//   subsets: ["latin"],
-//   display: "swap",
-//   variable: "--font-geist-pixel",
-// });
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -40,9 +18,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} h-full antialiased`}
+      className={`${playfairDisplay.variable} h-full antialiased bg-black`}
     >
-      <body className="min-h-ful bg-linear-to-b from-indigo-950 via-indigo-900 to-blue-900 bg-fixed pb-24">
+      <body className="min-h-full bg-linear-to-b from-indigo-950 via-indigo-900 to-blue-900 pb-24">
         <Header />
         <div className="px-6 pt-8 sm:pt-16 lg:px-8">{children}</div>
       </body>

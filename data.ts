@@ -23,7 +23,7 @@ export const brandedWebsites = [
   },
   {
     name: "Linkedin",
-    href: "#",
+    href: "https://www.linkedin.com/in/devinyounge/",
     icon: faLinkedin,
   },
 ];
@@ -32,13 +32,6 @@ export const Email = {
   name: "Email",
   href: "mailto:dyoungevo@gmail.com",
 };
-
-export const AudioSamples = [
-  {
-    src: "/assets/sample.mp3",
-    name: "Tae Kwon Donkey",
-  },
-];
 
 export const pageLinks = [
   { name: "Home", href: "/" },
