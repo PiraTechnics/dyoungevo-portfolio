@@ -1,15 +1,47 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { PlayIcon, PauseIcon } from "@heroicons/react/24/outline";
 
 export const AudioPlayer = ({ src = "", title = "" }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasEnded, setHasEnded] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [hasEnded, setHasEnded] = useState(false);
+
+  const iconClasses = "size-8 stroke-gray-200 fill-gray-200";
+
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
+  const handleTimelineClick = (e: any) => {
+    const timelineWidth = e.currentTarget.clientWidth;
+    const clickPositionX = e.nativeEvent.offsetX;
+    console.log(clickPositionX);
+    console.log(duration);
+    const newTime = (clickPositionX / timelineWidth) * duration;
+    if (audioRef.current) {
+      audioRef.current.currentTime = newTime;
+    }
+
+    setCurrentTime(newTime);
+  };
 
   const togglePlayPause = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+
     if (isPlaying) {
       audioRef.current?.pause();
     } else {
@@ -19,105 +51,58 @@ export const AudioPlayer = ({ src = "", title = "" }) => {
     setHasEnded(false);
   };
 
-  const handleTimeUpdate = () => {
-    if (audioRef.current) {
-      setCurrentTime(audioRef.current.currentTime);
-    }
-  };
-
   const handleAudioEnded = () => {
     setHasEnded(true);
-    setIsPlaying(false);
     setCurrentTime(0);
+    setIsPlaying(false);
   };
-
-  const formatTime = (time: number) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-  };
-
-  const handleLoadedMetadata = () => {
-    if (audioRef.current) {
-      setDuration(audioRef.current.duration);
-    }
-  };
-
-  const handleTimelineClick = (e: any) => {
-    const timelineWidth = e.target.clientWidth;
-    const clickPositionX = e.nativeEvent.offsetX;
-    const newTime = (clickPositionX / timelineWidth) * duration;
-    if (audioRef.current) {
-      audioRef.current.currentTime = newTime;
-    }
-
-    setCurrentTime(newTime);
-  };
-
-  const PlayIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-10 h-10"
-    >
-      <path
-        fillRule="evenodd"
-        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-
-  const PauseIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-10 h-10"
-    >
-      <path
-        fillRule="evenodd"
-        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM9 8.25a.75.75 0 0 0-.75.75v6c0 .414.336.75.75.75h.75a.75.75 0 0 0 .75-.75V9a.75.75 0 0 0-.75-.75H9Zm5.25 0a.75.75 0 0 0-.75.75v6c0 .414.336.75.75.75H15a.75.75 0 0 0 .75-.75V9a.75.75 0 0 0-.75-.75h-.75Z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
 
   return (
-    <div className="p-4 mt-4 bg-white dark:bg-gray-800 rounded-xl dark:shadow-lg md:w-1/3 sm:w-1/2 xs:w-2/3 w-3/4">
-      <audio
-        ref={audioRef}
-        onTimeUpdate={handleTimeUpdate}
-        onLoadedMetadata={handleLoadedMetadata}
-        onEnded={handleAudioEnded}
-        src={src}
-      />
-      <div className="flex items-center justify-between">
-        <h3 className="text-md text-gray-500 dark:text-gray-300 flex">
-          {title}
-        </h3>
-        <button
-          onClick={togglePlayPause}
-          className="transition-all duration-300 shadow-sm text-indigo-500 font-bold rounded-full flex items-center justify-center"
-        >
-          {hasEnded ? <PlayIcon /> : isPlaying ? <PauseIcon /> : <PlayIcon />}
+    <div className="flex justify-center bg-g">
+      <div className="h-16 ps-2 min-w-80 divide-x-2 divide-slate-800 bg-slate-900 flex">
+        <audio
+          ref={audioRef}
+          onTimeUpdate={handleTimeUpdate}
+          onEnded={handleAudioEnded}
+          src={src}
+        />
+        <button className="px-2 py-1" onClick={togglePlayPause}>
+          {hasEnded ? (
+            <PlayIcon className={iconClasses} />
+          ) : isPlaying ? (
+            <PauseIcon className={iconClasses} />
+          ) : (
+            <PlayIcon className={iconClasses} />
+          )}
         </button>
-      </div>
-
-      <div
-        className="relative h-2 bg-gray-600 rounded mb-4 mt-4 cursor-pointer"
-        onClick={handleTimelineClick}
-      >
         <div
-          className="absolute top-0 left-0 h-full bg-indigo-500 rounded"
-          style={{ width: `${(currentTime / duration) * 100}%` }}
-        ></div>
-      </div>
-
-      <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
-        <span>{formatTime(currentTime)}</span>
-        <span>{formatTime(duration - currentTime)}</span>
+          className="relative h-full w-full cursor-pointer"
+          onClick={handleTimelineClick}
+        >
+          <div
+            className="absolute top-0 left-0 h-full bg-slate-800 opacity-80"
+            style={{ width: `${(currentTime / duration) * 100}%` }}
+          ></div>
+          <div className="flex p-3 justify-between w-full">
+            <span className=" text-gray-100 z-0">{title}</span>
+            <div className="flex flex-col w-16">
+              <div
+                className={`flex gap-1 text-gray-100 text-sm z-0 ${isPlaying ? "" : " invisible"}`}
+              >
+                <span>{formatTime(currentTime)}</span>/
+                <span>{formatTime(duration)}</span>
+              </div>
+              <a
+                className="text-gray-400 text-xs z-0"
+                href={src}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
