@@ -1,6 +1,3 @@
-import { AudioSamples } from "@/data";
-import { AudioPlayer } from "@/ui/components/AudioPlayer";
-
 const aboutParagraphs = [
   "Devin Younge (He/Him) is a professional Voice Actor known for his smooth baritone voice and confident, enthusiastic energy. He made his initial Voiceover debut as a Live Commentator for the League of Legends Championship Series in 2015. Under the moniker ‘PiraTechnics’, he would go on provide commentary for over forty live esports events and leagues over a decade, in addition to live interviews and promotional videos.",
   "He discovered a love of character acting through playing tabletop games like Dungeons & Dragons and Call of Cthulhu with his friends. In the years since, he has studied acting under such teachers as Steve Blum, Sara Cravens, and JD Kelly. He speaks conversational German, and has an ear for accents. Aside from voice acting, Devin also writes D&D adventure modules, short poems and prose fiction. He’s travelled extensively, but has since returned to his west coast roots. He lives in Los Angeles with his partner-in-crime Kristen, and their adorable goblin of a cat, Espresso.",
