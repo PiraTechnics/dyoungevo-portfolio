@@ -8,12 +8,12 @@ import {
 const studioItems = [
   {
     name: "Microphone",
-    details: "Blue Ember Condenser XLR",
+    details: "RØDE NT1",
     icon: MicrophoneIcon,
   },
   {
     name: "Interface",
-    details: "Scarlett 2i2 (3rd Generation)",
+    details: "Focusrite Scarlett 2i2",
     icon: AdjustmentsVerticalIcon,
   },
   {
